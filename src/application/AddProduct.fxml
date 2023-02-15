@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddProductController">
+   <children>
+      <ImageView fitHeight="1442.0" fitWidth="1393.0" layoutX="-100.0" layoutY="-265.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/ProductBackground.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffc6" height="565.0" layoutX="216.0" layoutY="118.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="881.0" />
+      <VBox layoutX="264.0" layoutY="181.0" prefHeight="352.0" prefWidth="393.0" spacing="10.0">
+         <children>
+            <Label prefHeight="33.0" prefWidth="402.0" text="PRODUCT">
+               <font>
+                  <Font name="Roboto Black" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="productName" prefHeight="32.0" prefWidth="242.0" promptText="Product Name" stylesheets="@application.css" />
+            <Label prefHeight="33.0" prefWidth="393.0" text="CODE">
+               <font>
+                  <Font name="Roboto Black" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="productCode" prefHeight="32.0" prefWidth="242.0" promptText="Product Code" stylesheets="@application.css" />
+            <Label prefHeight="33.0" prefWidth="401.0" text="PRICE">
+               <font>
+                  <Font name="Roboto Black" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="productPrice" prefHeight="32.0" prefWidth="242.0" promptText="Price" stylesheets="@application.css" />
+            <Label prefHeight="33.0" prefWidth="446.0" text="IMAGE">
+               <font>
+                  <Font name="Roboto Black" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="productImagePath" prefHeight="32.0" prefWidth="242.0" promptText="ImagePath" stylesheets="@application.css" />
+         </children>
+      </VBox>
+      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackToDashboard" text="&lt;">
+         <font>
+            <Font name="Lato Black" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="353.0" layoutY="573.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="56.0" prefWidth="197.0" stylesheets="@application.css" text="ADD">
+         <font>
+            <Font name="Roboto" size="26.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="image" fitHeight="250.0" fitWidth="304.0" layoutX="722.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="755.0" layoutY="482.0" mnemonicParsing="false" onAction="#ChoosePicture" stylesheets="@application.css" text="Camera " />
+      <Button layoutX="874.0" layoutY="482.0" mnemonicParsing="false" onAction="#ChooseFile" stylesheets="@application.css" text="Upload Photo" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="803.0" prefWidth="1313.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PosController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fbfdffb5" height="830.0" layoutX="-22.0" layoutY="-25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1343.0" />
+      <Pane layoutX="798.0" layoutY="478.0" prefHeight="312.0" prefWidth="374.0" style="-fx-background-color: a8dadc;" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#023047" height="134.0" layoutX="708.0" layoutY="-73.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="610.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#023047" height="134.0" layoutX="-5.0" layoutY="-28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="755.0" />
+      <TableView fx:id="productTable" layoutY="159.0" onMouseClicked="#getItem" prefHeight="643.0" prefWidth="745.0" stylesheets="@tableView.css">
+        <columns>
+          <TableColumn fx:id="product" prefWidth="197.0" text="PRODUCT" />
+          <TableColumn fx:id="code" prefWidth="146.0" text="CODE" />
+            <TableColumn fx:id="price" prefWidth="163.0" text="PRICE" />
+            <TableColumn fx:id="image" prefWidth="238.0" text="IMAGE" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TextField fx:id="searchBar" layoutX="164.0" layoutY="115.0" prefHeight="37.0" prefWidth="581.0" promptText="SEARCH" stylesheets="@application.css" />
+      <TableView fx:id="purchaseTable" layoutX="798.0" layoutY="159.0" prefHeight="312.0" prefWidth="374.0" stylesheets="@tableView.css">
+        <columns>
+          <TableColumn fx:id="listProduct" prefWidth="117.0" text="PRODUCT" />
+          <TableColumn fx:id="listQty" prefWidth="128.0" text="QTY" />
+            <TableColumn fx:id="listPrice" prefWidth="128.0" text="PRICE" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtQty" layoutX="962.0" layoutY="106.0" prefHeight="37.0" prefWidth="82.0" promptText="QTY" stylesheets="@application.css" text="1" />
+      <Label fx:id="txtPrice" alignment="CENTER" layoutX="1053.0" layoutY="107.0" prefHeight="37.0" prefWidth="112.0" />
+      <Label fx:id="txtProduct" alignment="CENTER" layoutX="798.0" layoutY="106.0" prefHeight="37.0" prefWidth="157.0" />
+      <Label alignment="CENTER" layoutX="798.0" layoutY="70.0" prefHeight="37.0" prefWidth="112.0" text="PRODUCT" textFill="#023047">
+         <font>
+            <Font name="Roboto Black" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="929.0" layoutY="70.0" prefHeight="37.0" prefWidth="112.0" text="QTY" textFill="#023047">
+         <font>
+            <Font name="Roboto Black" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="1038.0" layoutY="70.0" prefHeight="37.0" prefWidth="112.0" text="PRICE" textFill="#023047">
+         <font>
+            <Font name="Roboto Black" size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnAdd" layoutX="1179.0" layoutY="100.0" mnemonicParsing="false" onAction="#add" prefHeight="42.0" prefWidth="122.0" stylesheets="@application.css" text="ADD" textFill="#08792a">
+         <font>
+            <Font name="Roboto Condensed" size="28.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRemove" layoutX="1179.0" layoutY="315.0" mnemonicParsing="false" onAction="#remove" prefHeight="26.0" prefWidth="122.0" stylesheets="@delete.css" text="REMOVE" textFill="#1b1616">
+         <font>
+            <Font name="Roboto Condensed" size="12.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER_RIGHT" layoutX="816.0" layoutY="481.0" prefHeight="37.0" prefWidth="106.0" text="Sub Total :">
+         <font>
+            <Font name="Roboto Black" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="765.0" layoutY="514.0" prefHeight="37.0" prefWidth="157.0" text="12% tax :">
+         <font>
+            <Font name="Roboto Black" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="765.0" layoutY="567.0" prefHeight="37.0" prefWidth="157.0" text="Total :">
+         <font>
+            <Font name="Roboto Black" size="28.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="843.0" layoutY="637.0" prefHeight="37.0" prefWidth="68.0" text="CASH :">
+         <font>
+            <Font name="Roboto Black" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="805.0" layoutY="749.0" prefHeight="37.0" prefWidth="106.0" text="CHANGE :">
+         <font>
+            <Font name="Roboto Black" size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtSubTotal" alignment="CENTER" layoutX="961.0" layoutY="481.0" prefHeight="37.0" prefWidth="148.0" textFill="#252222">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label fx:id="txtVat" alignment="CENTER" layoutX="945.0" layoutY="514.0" prefHeight="37.0" prefWidth="180.0" />
+      <Label fx:id="txtTotal" alignment="CENTER" layoutX="945.0" layoutY="552.0" prefHeight="52.0" prefWidth="180.0">
+         <font>
+            <Font name="Ubuntu Condensed" size="40.0" />
+         </font></Label>
+      <Label fx:id="txtChange" alignment="CENTER" layoutX="944.0" layoutY="749.0" prefHeight="37.0" prefWidth="148.0">
+         <font>
+            <Font name="Roboto Black" size="16.0" />
+         </font></Label>
+      <TextField fx:id="txtCash" layoutX="945.0" layoutY="640.0" prefHeight="37.0" prefWidth="95.0" promptText="AMOUNT" text="00.00" />
+      <Label alignment="CENTER" layoutX="932.0" layoutY="481.0" prefHeight="37.0" prefWidth="30.0" text="P">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="917.0" layoutY="640.0" prefHeight="37.0" prefWidth="30.0" text="P">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="914.0" layoutY="749.0" prefHeight="37.0" prefWidth="30.0" text="P">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="145.0" prefHeight="90.0" prefWidth="623.0" text="Siimple POS" textFill="WHITE">
+         <font>
+            <Font name="Rekha" size="73.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#023047" height="200.0" layoutX="649.0" layoutY="-135.0" rotate="-45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
+      <Button fx:id="btnPurchase" layoutX="883.0" layoutY="693.0" mnemonicParsing="false" onAction="#purchase" prefHeight="42.0" prefWidth="205.0" style="-fx-border-color: dreen;" stylesheets="@purchase.css" text="PURCHASE" textFill="#085103">
+         <font>
+            <Font name="Roboto Black" size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="NewProduct" layoutX="14.0" layoutY="112.0" mnemonicParsing="false" onAction="#SwitchToNewProduct" prefHeight="37.0" prefWidth="140.0" stylesheets="@application.css" text="NEW">
+         <font>
+            <Font name="Roboto Medium" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="1179.0" layoutY="253.0" mnemonicParsing="false" onAction="#clear" prefHeight="47.0" prefWidth="122.0" stylesheets="@delete.css" text="CLEAR" textFill="#1b1515">
+         <font>
+            <Font name="Roboto Condensed" size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

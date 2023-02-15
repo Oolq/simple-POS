@@ -1,0 +1,29 @@
+.table-view {
+  
+  -fx-background-color: white;
+  -fx-border-color: #dee2e6;
+  -fx-border-width: 1px;
+  -fx-padding: 10px;
+  -fx-border-radius: 5px;
+}
+
+.table-view .column-header {
+  -fx-background-color: #bde0fe;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-alignment: center;
+}
+
+.table-view .table-cell {
+  -fx-background-color: white;
+  -fx-text-fill: #212529;
+  -fx-alignment: center;
+}
+
+.table-view .table-row-cell:odd {
+  -fx-background-color: #f8f9fa;
+}
+
+.table-view .table-row-cell:hover {
+  -fx-background-color: #e9ecef;
+}
