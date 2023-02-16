@@ -64,7 +64,7 @@ public class InvoiceController implements Initializable{
 	}
 	
 	public void initialize() throws NumberFormatException, IOException{
-		BufferedReader reader = new BufferedReader(new FileReader("/home/shiba/eclipse-workspace/tableViewDemo/Database/Invoice.txt")); 
+		BufferedReader reader = new BufferedReader(new FileReader("/home/shiba/Documents/JavaProj/simple-POS/Database/Invoice.txt")); 
 			String Line;
 			 Line = reader.readLine();
 			 String[] newLine = Line.split(",");
@@ -72,7 +72,7 @@ public class InvoiceController implements Initializable{
 			 String change = newLine[4];
 			 txtCash.setText(cash);
 			 txtChange.setText(change);
-		try (BufferedReader readers = new BufferedReader(new FileReader("/home/shiba/eclipse-workspace/tableViewDemo/Database/Invoice.txt"))) {
+		try (BufferedReader readers = new BufferedReader(new FileReader("/home/shiba/Documents/JavaProj/simple-POS/Database/Invoice.txt"))) {
 			String line;
  while ((line = readers.readLine()) != null) {
 			 String[] nextLine = line.split(",");
